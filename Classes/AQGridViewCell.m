@@ -402,10 +402,11 @@
 	}
 	else
 	{
+		BOOL enableAnim = [UIView areAnimationsEnabled];
 		[UIView setAnimationsEnabled: NO];
 		// find all non-opaque subviews and make opaque again, with original background colors
 		[self makeSubviewsOfViewOpaqueAgain: self];
-		[UIView setAnimationsEnabled: YES];
+		[UIView setAnimationsEnabled: enableAnim];
 		
 		_cellFlags.highlighted = 0;
 		[_selectedBackgroundView removeFromSuperview];
