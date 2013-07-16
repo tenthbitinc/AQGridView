@@ -338,6 +338,7 @@
 	if ( highlightOn )
 	{
 		// start it invisible
+        BOOL enableAnimations = [UIView areAnimationsEnabled];
 		[UIView setAnimationsEnabled: NO];
 		_selectedBackgroundView.alpha = 0.0;
 		
@@ -350,7 +351,7 @@
 			[self insertSubview: _selectedBackgroundView atIndex: 0];
 		_selectedBackgroundView.frame = self.bounds;
 		
-		[UIView setAnimationsEnabled: YES];
+        [UIView setAnimationsEnabled:enableAnimations];
 		
 		// now the animating bit -- make the selection fade in
 		_selectedBackgroundView.alpha = 1.0;
