@@ -375,6 +375,7 @@ NSString * const AQGridViewSelectionDidChangeNotification = @"AQGridViewSelectio
 	}
 
 	[self setNeedsLayout];
+	[self handleGridViewBoundsChanged:self.bounds toNewBounds:self.bounds];
 }
 
 - (UIView *) gridFooterView
